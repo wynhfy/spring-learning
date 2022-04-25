@@ -10,8 +10,18 @@ import org.junit.Test;
  **/
 public class UserService {
 
+    private String test;
+
+    public UserService(){
+
+    }
+
+    public UserService(String test){
+        this.test = test;
+    }
+
     public void test(){
-        System.out.println("test");
+        System.out.println(test);
     }
 
 }

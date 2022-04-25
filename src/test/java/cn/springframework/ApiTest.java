@@ -18,12 +18,15 @@ public class ApiTest {
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
         BeanDefinition beanDefinition = new BeanDefinition(UserService.class);
         beanFactory.registryBeanDefinition("userService",beanDefinition);
-
+//
         UserService userService = (UserService) beanFactory.getBean("userService");
         userService.test();
+//
+//        UserService userService1 = (UserService) beanFactory.getBean("userService");
+//        System.out.println(userService == userService1);
 
-        UserService userService1 = (UserService) beanFactory.getBean("userService");
-        System.out.println(userService == userService1);
+        UserService userService2 = (UserService) beanFactory.getBean("userService","wyn");
+        userService2.test();
     }
 
 }
