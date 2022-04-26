@@ -1,6 +1,5 @@
 package cn.springframework.bean;
 
-import org.junit.Test;
 
 /**
  * @program: my-spring
@@ -12,8 +11,15 @@ public class UserService {
 
     private String test;
 
+    private UserDao userDao;
+
     public UserService(){
 
+    }
+
+    public UserService(String test,UserDao userDao){
+        this.test = test;
+        this.userDao = userDao;
     }
 
     public UserService(String test){
@@ -22,6 +28,22 @@ public class UserService {
 
     public void test(){
         System.out.println(test);
+        userDao.test();
     }
 
+    public String getTest() {
+        return test;
+    }
+
+    public void setTest(String test) {
+        this.test = test;
+    }
+
+    public UserDao getUserDao() {
+        return userDao;
+    }
+
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
 }
